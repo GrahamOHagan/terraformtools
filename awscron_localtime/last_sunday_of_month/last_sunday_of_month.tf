@@ -6,7 +6,7 @@ locals {
 output "last_sunday_of_month" {
   value = join("", [
     for dt in local.last_week_of_month:
-    "${local.this_year}-${var.month}-${dt}T02:00:00Z"
-    if formatdate("EEEE", "${local.this_year}-${var.month}-${dt}T02:00:00Z") == "Sunday"
+    "${local.this_year}-${var.month}-${dt}T00:00:00Z"
+    if formatdate("EEEE", "${local.this_year}-${var.month}-${dt}T00:00:00Z") == "Sunday"
   ])
 }
